@@ -38,10 +38,10 @@ public class EmployeeServiceImpl implements EmployeeService {
            throw new UserNotFoundException("No Supervisors found for employee",employeeName);
         }
         Map<String, String> supervisors = new HashMap<>();
-        supervisors.put("supervisor", employee.getSupervisor());
-        Employee supervisor = employeeRepository.findBySupervisor(employee.getSupervisor());
+        supervisors.put("supervisorName", employee.getSupervisor());
+        Employee supervisor = employeeRepository.findByEmployeeName(employee.getSupervisor());
         if (supervisor != null) {
-            supervisors.put("supervisorSupervisor", supervisor.getSupervisor());
+            supervisors.put("supervisorOfSupervisorName", supervisor.getSupervisor());
         }
         return supervisors;
     }

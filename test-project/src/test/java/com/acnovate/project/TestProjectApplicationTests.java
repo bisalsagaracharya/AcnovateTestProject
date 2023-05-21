@@ -10,4 +10,9 @@ class TestProjectApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	void testSaveEmployee(){
+
+	}
+
 }
